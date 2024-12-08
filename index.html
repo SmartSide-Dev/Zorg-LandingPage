@@ -30,54 +30,105 @@
 
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="hero-content">
-        <h1 class="hero-title">Skill-Based Testing to Recruit <br> Exceptional Talent</h1>
-        <div class="hero-grid">
-          <div class="hero-card">
-            <button class="hero-btn">For Fresh Candidates</button>
-          </div>
-          <div class="hero-card">
-            <button class="hero-btn hero-btn-secondary">For Recruiters</button>
-          </div>
-        </div>
+   <!-- Hero Section -->
+<section class="hero-section">
+  <div class="hero-content">
+    <h1 class="hero-title animate-fade-in">
+      Skill-Based Testing to Recruit <br> Exceptional Talent
+    </h1>
+    <div class="hero-grid">
+      <div class="hero-card animate-slide-up">
+        <button class="hero-btn">For Fresh Candidates</button>
       </div>
-    </section>
+      <div class="hero-card animate-slide-up delay-1">
+        <button class="hero-btn hero-btn-secondary">For Recruiters</button>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section class="container">
-      <!-- Left Section: Content -->
-      <div class="left-section">
-        <h2>What is Persona?</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus euismod, erat in volutpat consequat, elit odio ultricies orci, a malesuada libero justo eu erat.</p>
-        
-        <h2>How Persona is Created?</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a sapien at libero facilisis pharetra. Sed eget purus a eros scelerisque tincidunt.</p>
-        
-        <div class="bio">
-          <h3>Barbara Grey</h3>
-          <p>"I should make the most of my time while I’m still here on campus."</p>
-          <p><strong>Major:</strong> Mechanical Engineer</p>
-          <p><strong>College:</strong> University of Michigan, Ann Arbor</p>
-          <p><strong>Age:</strong> 21</p>
+<section class="about-section container">
+  <div class="image-container">
+    <div class="image-wrapper animate-fade-in">
+      <img src="assets/img/LOGIN_IMAGE.png" alt="First Image" class="main-image">
+      <img src="assets/img/LOGIN_IMAGE1.png" alt="Second Image" class="overlay-image">
+    </div>
+  </div>
+  <div class="text-container">
+    <div class="section animate-slide-left">
+      <h2>What is Persona?</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur,
+        suscipit quasi officia officiis sapiente, illum ab voluptatum ipsum
+        nostrum sit sequi, natus modi et corporis eligendi voluptas! Reiciendis
+        velit laboriosam eius quisquam incidunt, minus quaerat.
+      </p>
+    </div>
+    <div class="section animate-slide-right delay-1">
+      <h2>How Persona is created?</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur,
+        suscipit quasi officia officiis sapiente, illum ab voluptatum ipsum
+        nostrum sit sequi, natus modi et corporis eligendi voluptas! Reiciendis
+        velit laboriosam eius quisquam incidunt, minus quaerat.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Left Section -->
+        <div class="footer-left">
+          <h1>Zorg Corp</h1>
         </div>
-        
-        <div class="frustrations">
-          <h4>Frustrations</h4>
-          <ul>
-            <li>Lack of job prospects</li>
-            <li>Student loans</li>
-            <li>Fear of underdeveloped social skills</li>
-          </ul>
+    
+        <!-- Middle Section -->
+        <div class="footer-middle">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <p>Address: 1234 Example St, City, Country</p>
+          <p>Email: contact@zorgcorp.com</p>
+          <p>Phone: +123 456 7890</p>
+        </div>
+    
+        <!-- Right Section -->
+        <div class="footer-right">
+          <img src="assets/img/zorg.jpg" alt="Company Logo" class="footer-image">
         </div>
       </div>
+    
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <p>&copy; 2024 Zorg Corp. All rights reserved.</p>
+      </div>
+    </footer>
+    <script>
       
-      <!-- Right Section: Images -->
-      <div class="right-section">
-        <img src="assets/img/LOGIN_IMAGE.png" alt="Persona Details" class="image-top">
-        <img src="assets/img/LOGIN_IMAGE1.png" alt="Overall Ratings" class="image-bottom">
-      </div>
-    </section>
+  document.addEventListener('DOMContentLoaded', function () {
+    const animatedElements = document.querySelectorAll(
+      '.animate-fade-in, .animate-slide-up, .animate-slide-left, .animate-slide-right'
+    );
+  
+    const observerOptions = {
+      root: null, // Observes viewport
+      rootMargin: '0px',
+      threshold: 0.1, // Trigger animation when 10% of the element is visible
+    };
+  
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+  
+    animatedElements.forEach(element => observer.observe(element));
+  });
+    </script>
+    
    
   </body>
 <script src="assets/js/script.js"></script>
